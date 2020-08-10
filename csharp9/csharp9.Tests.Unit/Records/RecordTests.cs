@@ -8,11 +8,31 @@ namespace csharp9.Tests.Unit.Records
         [Fact]
         public void InitOnlyByDefault()
         {
-            var r = new Chicken { Name = "test" };
+            var c = new Chicken { Name = "test" };
+            Assert.Equal("test", c.Name);
 
-            //r.Name = "t";
-            //var m = new Milk { Calories = 1, FatPercentage = 3.25 };
-            //m.Calories = 2;
+            // setting a value is not allowed
+            //c.Name = "t";
+        }
+
+        [Fact]
+        public void RecordsWith()
+        {
+            var c = new Chicken { Name = "test" };
+            var c2 = c with { Name = "myNewName" };
+
+            Assert.Equal("myNewName", c2.Name);
+            Assert.NotEqual(c, c2);
+        }
+
+
+        [Fact]
+        public void StructuralEquality()
+        {
+            var c = new Chicken { Name = "test" };
+            var c2 = new Chicken { Name = "test" };
+            
+            Assert.Equal(c, c2);
         }
 
         [Fact]

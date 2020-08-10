@@ -14,14 +14,8 @@ namespace csharp9.Tests.Unit.PrimaryConstructors
         public void SimplePrimaryConstructor()
         {
             var p = new Person("Miguel", "Bernard");
-
             Assert.Equal("Miguel", p.firstName);
             Assert.Equal("Bernard", p.lastName);
-
-            var p2 = p with { firstName = "test" };
-
-            Assert.Equal("test", p2.firstName);
-            Assert.Equal("Bernard", p2.lastName);
         }
 
         [Fact]
@@ -31,6 +25,14 @@ namespace csharp9.Tests.Unit.PrimaryConstructors
 
             Assert.Equal("Miguel", p.firstName);
             Assert.Equal("test", p.lastName);
+        }
+
+        [Fact]
+        public void PrimaryConstructorWithDefaultValue()
+        {
+            var p = new PersonWithDefaultValue("Miguel");
+            Assert.Equal("Miguel", p.firstName);
+            Assert.Equal("lastName", p.lastName);
         }
 
         //[Fact]
