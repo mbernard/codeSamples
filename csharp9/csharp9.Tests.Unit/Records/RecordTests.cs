@@ -1,4 +1,5 @@
 ﻿using csharp9.Records;
+using System;
 using Xunit;
 
 namespace csharp9.Tests.Unit.Records
@@ -38,11 +39,13 @@ namespace csharp9.Tests.Unit.Records
         [Fact]
         public void Deconstructor()
         {
-            var m = new Milk(1, 3.25);
-            var (x, y) = m;
+            var now = DateTime.UtcNow;
+            var deconstructMe = new Deconstructable(42, "My super name", now);
+            var(x, y, z) = deconstructMe;
 
-            Assert.Equal(1, x);
-            Assert.Equal(3.25, y);
+            Assert.Equal(42, x);
+            Assert.Equal("My super name", y);
+            Assert.Equal(now, z);
         }
 
         [Fact]
