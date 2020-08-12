@@ -1,5 +1,6 @@
 ﻿using csharp9.Records;
 using System;
+using System.Runtime.ConstrainedExecution;
 using Xunit;
 
 namespace csharp9.Tests.Unit.Records
@@ -69,5 +70,10 @@ namespace csharp9.Tests.Unit.Records
             Assert.Equal(1, m.C);
             Assert.Equal(1, m.Calories);
         }
+
+        // This is not supported yet
+        //public void ThisIsADummyMethod<T>(T t) where T : record
+        //{
+        //}
     }
 }
