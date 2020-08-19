@@ -10,7 +10,6 @@ namespace csharp9.Records
     public record Milk(int C, double FatPercentage) : Food(C);
     public record Chicken { public string Name { get; init; } }
     public record Deconstructable(int quantity, string name, DateTime time);
-    //public record Chicken(string name);
 
     public class ClassType
     {

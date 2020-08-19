@@ -1,6 +1,5 @@
 ﻿using csharp9.Records;
 using System;
-using System.Runtime.ConstrainedExecution;
 using Xunit;
 
 namespace csharp9.Tests.Unit.Records
@@ -30,10 +29,11 @@ namespace csharp9.Tests.Unit.Records
 
         [Fact]
         public void StructuralEquality()
-        {
+        { 
             var c = new Chicken { Name = "test" };
             var c2 = new Chicken { Name = "test" };
-            
+
+            Assert.False(c == c2);
             Assert.Equal(c, c2);
         }
 
