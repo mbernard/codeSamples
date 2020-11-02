@@ -15,13 +15,13 @@ namespace csharp9.Tests.Unit.NullParameterCheck
 
         }
 
-        public class NullService
-        {
-            public void SomeMethod(string name!)
-            {
+        //public class NullService
+        //{
+        //    public void SomeMethod(string name!)
+        //    {
 
-            }
-        }
+        //    }
+        //}
 
     }
 }
